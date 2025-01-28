@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SimpleCalculator</title>
+    </head>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: rgb(220, 214, 206);
+        }
+        h1{
+           
+            margin-bottom: 23px;
+            text-align: center;
+            font-size: 50px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgba(71, 71, 59, 0.527);
+        }
+        main{
+            margin-top:20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #calculator{
+            background-color:rgb(37, 36, 36);
+            height: 65vh;
+            width: 50vh;
+            border: none;
+            border-radius: 10px;
+        }
+        #display,#display:hover,#display:focus{
+           width: 100%;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            margin-top: 0px;
+            height: 70px;
+            color: white;
+            background-color: rgb(67, 66, 66);
+            font-size: 22px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        #btns{
+            margin-left: 18px;
+            margin-top: 10px;
+        }
+        button{
+            margin: 15px;
+            width: 53px;
+            height: 53px;
+            border: none;
+            border-radius: 20px;
+            font-size: 22px;
+            background-color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;            
+        }
+        button:hover{
+            background-color: rgb(193, 187, 187);
+        }
+        #operator{
+            background-color: rgb(255, 157, 0);
+        }
+        #operator:hover{
+            background-color: rgb(198, 125, 7);
+        }
+        #calc{
+            width: 310px;
+            background-color: rgb(26, 149, 250);
+        }
+        #calc:hover{
+            background-color: rgba(26, 149, 250, 0.84);
+        }
+        p,h3{
+            margin-top: 50px;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: rgb(0, 34, 255);
+        }
+        #foot{
+            background-color: aquamarine;
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            font-size: 19px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <body>
+        <h1>Basic Calculator</h1>
+        <main>
+            <div id="calculator">
+                <input id="display" readonly><br>
+                <div id="btns">
+                <button onclick="appenddisplay('7')">7</button>
+                <button onclick="appenddisplay('8')">8</button>
+                <button onclick="appenddisplay('9')">9</button>
+                <button id="operator" onclick="appenddisplay('*')">x</button><br>
+                <button onclick="appenddisplay('4')">4</button>
+                <button onclick="appenddisplay('5')">5</button>
+                <button onclick="appenddisplay('6')">6</button>
+                <button id="operator" onclick="appenddisplay('+')">+</button><br>
+                <button onclick="appenddisplay('1')">1</button>
+                <button onclick="appenddisplay('2')">2</button>
+                <button onclick="appenddisplay('3')">3</button>
+                <button id="operator" onclick="appenddisplay('-')">-</button><br>
+                <button ionclick="appenddisplay('0')">0</button>
+                <button id="operator" onclick="appenddisplay('/')">/</button>
+                <button id="operator" onclick="appenddisplay('.')">.</button>
+                <button id="operator" onclick="cleardisplay()">C</button><br>
+                <button id="calc" onclick="calculate()">=</button>
+                </div>
+            </div>
+            
+        </main>
+        <p>This is basic calculator using Html ,CSS, Javascript by Araveen Pipavath</p>
+        <h3>Contacts</h3>
+        <div id="foot">
+            <a href="https://github.com/Araveenp">Github</a><br><a href="https://www.linkedin.com/in/araveen-pipavath-45611b293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Linked in</a>
+        </div>
+    </body>
+    <script>
+        const display=document.getElementById("display");
+
+        function appenddisplay(input){
+            display.value+=input;
+        }
+        function cleardisplay(){
+            display.value="";
+        }
+        function calculate(){
+            try{
+                display.value=eval(display.value);
+            }
+            catch(error){
+                display.value='ERROR';
+            }
+        }
+    </script>
+</html>
