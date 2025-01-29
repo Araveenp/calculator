@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>SimpleCalculator</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
     </head>
     <style>
         *{
@@ -10,6 +11,7 @@
         }
         body{
             background-color: rgb(220, 214, 206);
+           
         }
         h1{
            
@@ -22,6 +24,7 @@
         main{
             margin-top:20px;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
         }
@@ -41,17 +44,18 @@
             height: 70px;
             color: white;
             background-color: rgb(67, 66, 66);
-            font-size: 22px;
+            font-size: 28px;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         #btns{
+            height: 100%;
             margin-left: 18px;
             margin-top: 10px;
         }
         button{
-            margin: 15px;
-            width: 53px;
-            height: 53px;
+            margin: 3px;
+            width: 21%;
+            height: 14%;
             border: none;
             border-radius: 20px;
             font-size: 22px;
@@ -68,7 +72,7 @@
             background-color: rgb(198, 125, 7);
         }
         #calc{
-            width: 310px;
+            width: 93%;
             background-color: rgb(26, 149, 250);
         }
         #calc:hover{
@@ -111,7 +115,7 @@
                 <button onclick="appenddisplay('2')">2</button>
                 <button onclick="appenddisplay('3')">3</button>
                 <button id="operator" onclick="appenddisplay('-')">-</button><br>
-                <button ionclick="appenddisplay('0')">0</button>
+                <button onclick="appenddisplay('0')">0</button>
                 <button id="operator" onclick="appenddisplay('/')">/</button>
                 <button id="operator" onclick="appenddisplay('.')">.</button>
                 <button id="operator" onclick="cleardisplay()">C</button><br>
